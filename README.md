@@ -96,7 +96,7 @@ UI Design | Material 3
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/YOUR_USERNAME/medicine_reminder.git
+git clone https://github.com/Pranavamale1/medicine_reminder.git
 2️⃣ Install Dependencies
 bash
 Copy code
