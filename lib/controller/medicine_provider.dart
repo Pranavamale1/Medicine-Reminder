@@ -36,16 +36,18 @@ class MedicineProvider extends ChangeNotifier {
       if (scheduledDate.isBefore(now)) {
         scheduledDate = scheduledDate.add(const Duration(days: 1));
         debugPrint(
-          "Time nikal chuka tha, Next Day ke liye schedule kiya: $scheduledDate",
+          "[NotificationService] Scheduled time has passed. Rescheduling for the next calendar day:$scheduledDate",
         );
       } else {
-        debugPrint("Aaj ke liye schedule kiya: $scheduledDate");
+        debugPrint(
+          "[NotificationService] Notification successfully scheduled for today: $scheduledDate",
+        );
       }
 
       await NotificationService().scheduleNotification(
         id: id,
         title: "💊 Medicine Reminder",
-        body: "Waqt ho gaya hai: ${medicine.name} (${medicine.dose})",
+        body: "It's Time to Take : ${medicine.name} (${medicine.dose})",
         scheduledTime: scheduledDate,
       );
     } catch (e) {
